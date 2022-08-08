@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>disable</Nullable>
+	  <Version>0</Version>
+	  <DocumentationFile>bin\$(Configuration)\Klee.Madama.Domain.GestionPersonne.xml</DocumentationFile>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Kinetix.Tools.Analyzers" Version="1.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Inbound\" />
+	  <Folder Include="Outbound\" />
+	</ItemGroup>
+
+</Project>
