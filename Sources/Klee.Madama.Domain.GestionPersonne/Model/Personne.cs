@@ -22,14 +22,19 @@ public class Personne
     public PostePersonne PosteActuel { get; set; }
 
     /// <summary>
-    /// Historique d'expériences de la personne
+    /// Historique d'expériences de la personne.
     /// </summary>
-    public List<ExperiencePersonne> HistoriqueExperience { get; set; }
+    public List<ExperiencePersonne> HistoriqueExperience { get; set; } = new();
 
     /// <summary>
-    /// Historique de postes de la personne
+    /// Historique de postes de la personne.
     /// </summary>
-    public List<PostePersonne> HistoriquePoste { get; set; }
+    public List<PostePersonne> HistoriquePoste { get; set; } = new();
+
+    /// <summary>
+    /// Historique de technos de la personne.
+    /// </summary>
+    public List<TechnoPersonne> HistoriqueTechno { get; set; } = new();
 }
 
 /// <summary>
