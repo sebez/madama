@@ -12,9 +12,9 @@ public class Personne
     public PersonneId Id { get; set; }
 
     /// <summary>
-    /// Etat civil.
+    /// Identité.
     /// </summary>
-    public EtatCivil EtatCivil { get; set; }
+    public Identite Identite { get; set; }
 
     /// <summary>
     /// Poste actuel de la personne.

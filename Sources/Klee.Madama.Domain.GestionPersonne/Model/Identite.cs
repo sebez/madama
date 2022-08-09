@@ -1,9 +1,9 @@
 ﻿namespace Klee.Madama.Domain.GestionPersonne.Model;
 
 /// <summary>
-/// Etat civil d'une personne.
+/// Identité d'une personne.
 /// </summary>
-public struct EtatCivil
+public struct Identite
 {
     /// <summary>
     /// Prénom de la personne.
