@@ -1,0 +1,7 @@
+---
+module: Referentiel
+tags:
+  - Dto
+uses:
+  - Data/01_Referentiel
+  - Data/00_Common

@@ -1,0 +1,164 @@
+---
+module: Referentiel
+tags:
+  - Data
+
+---
+class:
+  trigram: PST
+  name: Poste
+  comment: Poste d'une personne.
+
+  properties:
+    - name: Code
+      label: Code
+      primaryKey: true
+      domain: DO_CODE_10
+      comment: Code poste.
+
+    - name: Libelle
+      comment: Libellé du poste.
+      label: Libellé
+      domain: DO_LIBELLE
+      required: true
+  values:
+    LeadTech: { Code: LEAD_TECH, Libelle: Leader technique }
+    Architecte: { Code: ARCHI, Libelle: Architecte }
+    Dev: { Code: DEV, Libelle: Développeur·se }
+    CP: { Code: CHEF_PROJET, Libelle: Chef·fe de projet }
+---
+class:
+  trigram: RLP
+  name: RoleProjet
+  comment: Rôle d'une personne dans une équipe projet.
+
+  properties:
+    - name: Code
+      label: Code
+      primaryKey: true
+      domain: DO_CODE_10
+      comment: Code poste.
+
+    - name: Libelle
+      comment: Libellé du rôle.
+      label: Libellé
+      domain: DO_LIBELLE
+      required: true
+  values:
+    RefTech: { Code: REF_TECH, Libelle: Référent technique }
+    RefFonc: { Code: REF_FONC, Libelle: Référent fonctionnel }
+    Architecte: { Code: ARCHI, Libelle: Architecte }
+    Dev: { Code: DEV, Libelle: Développeur·se }
+    CP: { Code: CHEF_PROJET, Libelle: Chef·fe de projet }
+    Scrum: { Code: SCRUM_MST, Libelle: Scrum master }
+---
+class:
+  trigram: CLT
+  name: Client
+  comment: Client de l'entreprise, commandaitaire de projets.
+
+  properties:
+    - name: Id
+      label: Id
+      primaryKey: true
+      domain: DO_ID
+      comment: Id client.
+
+    - name: Nom
+      comment: Nom du client.
+      label: Nom
+      domain: DO_LIBELLE
+      required: true
+---
+class:
+  trigram: PRS
+  name: Personne
+  comment: Personne travaillant dans l'entreprise.
+
+  properties:
+    - name: Id
+      label: Id
+      primaryKey: true
+      domain: DO_ID
+      comment: Id client.
+
+    - name: Nom
+      comment: Nom de la personne.
+      label: Nom
+      domain: DO_LIBELLE
+      required: true
+    - name: Prenom
+      comment: Prénom de la personne.
+      label: Prénom
+      domain: DO_LIBELLE
+      required: true
+    - name: Courriel
+      comment: Courriel de la personne.
+      label: Courriel
+      domain: DO_EMAIL
+      required: true
+---
+class:
+  trigram: CTE
+  name: CategorieTechno
+  comment: Catégorie d'une techno.
+
+  properties:
+    - name: Code
+      label: Code
+      primaryKey: true
+      domain: DO_CODE_10
+      comment: Code catégorie techno.
+
+    - name: Libelle
+      comment: Libellé de la catégorie techno.
+      label: Libellé
+      domain: DO_LIBELLE
+      required: true
+  values:
+    Front: { Code: FRONT, Libelle: Front }
+    Back: { Code: BACK, Libelle: Back }
+    Infra: { Code: INFRA, Libelle: Infra }
+    CICD: { Code: CICD, Libelle: CI/CD }
+---
+class:
+  trigram: TEC
+  name: Techno
+  comment: Technologie utilisée sur un projet.
+
+  properties:
+    - name: Id
+      label: Id
+      primaryKey: true
+      domain: DO_ID
+      comment: Id techno.
+    - name: Nom
+      comment: Nom de la techno.
+      label: Nom
+      domain: DO_LIBELLE
+      required: true
+    - association: CategorieTechno
+      comment: Catégorie de la techno.
+      label: Catégorie
+      required: true
+---
+class:
+  trigram: VTE
+  name: VersionTechno
+  comment: Version d'une technologie.
+
+  properties:
+    - name: Id
+      label: Id
+      primaryKey: true
+      domain: DO_ID
+      comment: Id version techno.
+    - name: Nom
+      comment: Nom de la version.
+      label: Nom
+      domain: DO_LIBELLE
+      required: true
+    - association: Techno
+      comment: Techno dont c'est une version.
+      label: Techno
+      required: true

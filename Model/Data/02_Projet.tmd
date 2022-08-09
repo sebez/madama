@@ -1,0 +1,28 @@
+---
+uses:
+  - Data/01_Referentiel
+module: Projet
+tags:
+  - Data
+
+---
+class:
+  trigram: PRJ
+  name: Projet
+  comment: Projet commandité par un client.
+
+  properties:
+    - name: Id
+      label: Id
+      primaryKey: true
+      domain: DO_ID
+      comment: Id projet.
+    - name: Nom
+      comment: Nom du projet.
+      label: Nom
+      domain: DO_LIBELLE
+      required: true
+    - association: Client
+      comment: Client du projet.
+      label: Client
+      required: true

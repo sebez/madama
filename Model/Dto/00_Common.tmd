@@ -1,0 +1,19 @@
+---
+module: Common
+tags:
+  - Dto
+uses:
+  - Data/00_Common
+# ---
+# class:
+#   name: MediaDto
+#   comment: Media DTO.
+
+#   properties:
+#     - alias:
+#         property:
+#           - Guid
+#           - Url
+#           - TypeMedia
+#         class: Media
+

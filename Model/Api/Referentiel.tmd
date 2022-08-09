@@ -1,0 +1,21 @@
+---
+module: Api
+tags:
+  - Api
+uses:
+  - Dto/01_Referentiel
+# ---
+# endpoint:
+#   name: GetCountries
+#   method: GET
+#   route: api/referentiel/country
+#   description: Get all countries.
+#   params:
+#     - name: lanCode
+#       domain: DO_CODE_5
+#       comment: Language code.
+#   returns:
+#     composition: CountryDto
+#     name: CountryDto
+#     kind: list
+#     comment: all db countries.

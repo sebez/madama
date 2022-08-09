@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<Version>0</Version>
+		<DocumentationFile>bin\$(Configuration)\Klee.Madama.Infra.Db.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Kinetix.Modeling" Version="1.0.0" />
+		<PackageReference Include="Kinetix.Reporting.Annotations" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions" Version="6.0.2" />
+	</ItemGroup>
+
+</Project>

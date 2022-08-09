@@ -1,0 +1,15 @@
+﻿#
+# ATTENTION CE FICHIER EST GENERE AUTOMATIQUEMENT !
+#
+
+version: 1.9.11
+generatedFiles:
+  - ..\Sources\Klee.Madama.Infra.Db\generated\MadamaDbContext.cs
+  - ..\Sources\Klee.Madama.Infra.Db\Models\generated\CategorieTechno.cs
+  - ..\Sources\Klee.Madama.Infra.Db\Models\generated\Client.cs
+  - ..\Sources\Klee.Madama.Infra.Db\Models\generated\Personne.cs
+  - ..\Sources\Klee.Madama.Infra.Db\Models\generated\Poste.cs
+  - ..\Sources\Klee.Madama.Infra.Db\Models\generated\Projet.cs
+  - ..\Sources\Klee.Madama.Infra.Db\Models\generated\RoleProjet.cs
+  - ..\Sources\Klee.Madama.Infra.Db\Models\generated\Techno.cs
+  - ..\Sources\Klee.Madama.Infra.Db\Models\generated\VersionTechno.cs
