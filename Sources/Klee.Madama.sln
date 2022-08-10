@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klee.Madama.Domain.GestionP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klee.Madama.Infra.Db", "Klee.Madama.Infra.Db\Klee.Madama.Infra.Db.csproj", "{2C64737D-217B-457B-8F65-4836977E46D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Infra", "01 Infra", "{3E693A46-DC37-41CB-B55F-0E771EF93700}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Domain", "02 Domain", "{A72101E7-8F61-492D-9C5A-F2435ACA9987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klee.Madama.Infra.Db.Migrations", "Klee.Madama.Infra.Db.Migrations\Klee.Madama.Infra.Db.Migrations.csproj", "{EC5F119D-FFA2-4CA0-8CBC-070E38F648D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +27,18 @@ Global
 		{2C64737D-217B-457B-8F65-4836977E46D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C64737D-217B-457B-8F65-4836977E46D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C64737D-217B-457B-8F65-4836977E46D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5F119D-FFA2-4CA0-8CBC-070E38F648D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5F119D-FFA2-4CA0-8CBC-070E38F648D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5F119D-FFA2-4CA0-8CBC-070E38F648D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5F119D-FFA2-4CA0-8CBC-070E38F648D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D8F89D0-FF0F-4851-8F5A-097602F74979} = {A72101E7-8F61-492D-9C5A-F2435ACA9987}
+		{2C64737D-217B-457B-8F65-4836977E46D4} = {3E693A46-DC37-41CB-B55F-0E771EF93700}
+		{EC5F119D-FFA2-4CA0-8CBC-070E38F648D0} = {3E693A46-DC37-41CB-B55F-0E771EF93700}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5CFE522-D9D1-48FE-8766-33D063DAB45D}

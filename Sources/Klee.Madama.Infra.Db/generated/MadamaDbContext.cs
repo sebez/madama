@@ -80,13 +80,13 @@ public partial class MadamaDbContext : DbContext
             new Poste { Code = "LEAD_TECH", Libelle = "Leader technique" },
             new Poste { Code = "ARCHI", Libelle = "Architecte" },
             new Poste { Code = "DEV", Libelle = "Développeur·se" },
-            new Poste { Code = "CHEF_PROJET", Libelle = "Chef·fe de projet" });
+            new Poste { Code = "CHEF_PRJ", Libelle = "Chef·fe de projet" });
         modelBuilder.Entity<RoleProjet>().HasData(
             new RoleProjet { Code = "REF_TECH", Libelle = "Référent technique" },
             new RoleProjet { Code = "REF_FONC", Libelle = "Référent fonctionnel" },
             new RoleProjet { Code = "ARCHI", Libelle = "Architecte" },
             new RoleProjet { Code = "DEV", Libelle = "Développeur·se" },
-            new RoleProjet { Code = "CHEF_PROJET", Libelle = "Chef·fe de projet" },
+            new RoleProjet { Code = "CHEF_PRJ", Libelle = "Chef·fe de projet" },
             new RoleProjet { Code = "SCRUM_MST", Libelle = "Scrum master" });
 
         OnModelCreatingPartial(modelBuilder);

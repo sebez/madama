@@ -25,7 +25,7 @@ public partial class Poste
     /// <summary>
     /// Chef·fe de projet.
     /// </summary>
-    public const string CP = "CHEF_PROJET";
+    public const string CP = "CHEF_PRJ";
 
     /// <summary>
     /// Développeur·se.
