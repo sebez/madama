@@ -28,6 +28,11 @@ public partial class CategorieTechno
     public const string CICD = "CICD";
 
     /// <summary>
+    /// Database.
+    /// </summary>
+    public const string Db = "DB";
+
+    /// <summary>
     /// Front.
     /// </summary>
     public const string Front = "FRONT";

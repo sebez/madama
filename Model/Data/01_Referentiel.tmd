@@ -124,6 +124,7 @@ class:
     Back: { Code: BACK, Libelle: Back }
     Infra: { Code: INFRA, Libelle: Infra }
     CICD: { Code: CICD, Libelle: CI/CD }
+    Db: { Code: DB, Libelle: Database }
 ---
 class:
   trigram: TEC

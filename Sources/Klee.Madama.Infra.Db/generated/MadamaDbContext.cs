@@ -98,7 +98,8 @@ public partial class MadamaDbContext : DbContext
             new CategorieTechno { Code = "FRONT", Libelle = "Front" },
             new CategorieTechno { Code = "BACK", Libelle = "Back" },
             new CategorieTechno { Code = "INFRA", Libelle = "Infra" },
-            new CategorieTechno { Code = "CICD", Libelle = "CI/CD" });
+            new CategorieTechno { Code = "CICD", Libelle = "CI/CD" },
+            new CategorieTechno { Code = "DB", Libelle = "Database" });
         modelBuilder.Entity<Poste>().HasData(
             new Poste { Code = "LEAD_TECH", Libelle = "Leader technique" },
             new Poste { Code = "ARCHI", Libelle = "Architecte" },
