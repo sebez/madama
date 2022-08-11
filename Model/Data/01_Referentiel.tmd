@@ -97,6 +97,10 @@ class:
       label: Courriel
       domain: DO_EMAIL
       required: true
+    - association: Poste
+      comment: Poste actuel.
+      label: Poste
+      required: false
 ---
 class:
   trigram: CTE

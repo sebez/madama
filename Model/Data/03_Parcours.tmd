@@ -1,0 +1,37 @@
+---
+uses:
+  - Data/01_Referentiel
+module: Projet
+tags:
+  - Data
+
+---
+class:
+  trigram: PRT
+  name: PersonneTechno
+  comment: Lien projet techno.
+
+  properties:
+    - name: Id
+      label: Id
+      primaryKey: true
+      domain: DO_ID
+      comment: Id lien.
+    - association: Personne
+      comment: Personne.
+      label: Personne
+      required: true
+    - association: VersionTechno
+      comment: Version techno.
+      label: Version techno
+      required: true
+    - name: DateDebut
+      comment: Date de début de l'usage de la techno par la personne.
+      label: Date début
+      domain: DO_DATE
+      required: true
+    - name: DateFin
+      comment: Date de fin de l'usage de la techno par la personne.
+      label: Date début
+      domain: DO_DATE
+      required: false

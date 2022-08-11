@@ -37,6 +37,11 @@ public partial class MadamaDbContext : DbContext
     public DbSet<Personne> Personnes { get; set; }
 
     /// <summary>
+    /// Accès à l'entité PersonneTechno.
+    /// </summary>
+    public DbSet<PersonneTechno> PersonneTechnos { get; set; }
+
+    /// <summary>
     /// Accès à l'entité Poste.
     /// </summary>
     public DbSet<Poste> Postes { get; set; }
@@ -45,6 +50,16 @@ public partial class MadamaDbContext : DbContext
     /// Accès à l'entité Projet.
     /// </summary>
     public DbSet<Projet> Projets { get; set; }
+
+    /// <summary>
+    /// Accès à l'entité ProjetPersonne.
+    /// </summary>
+    public DbSet<ProjetPersonne> ProjetPersonnes { get; set; }
+
+    /// <summary>
+    /// Accès à l'entité ProjetTechno.
+    /// </summary>
+    public DbSet<ProjetTechno> ProjetTechnos { get; set; }
 
     /// <summary>
     /// Accès à l'entité RoleProjet.
@@ -67,7 +82,15 @@ public partial class MadamaDbContext : DbContext
     /// <param name="modelBuilder">L'objet de construction du modèle.</param>
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Personne>().HasOne<Poste>().WithMany().HasForeignKey(p => p.PosteCode).OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<PersonneTechno>().HasOne<Personne>().WithMany().HasForeignKey(p => p.PersonneId).OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<PersonneTechno>().HasOne<VersionTechno>().WithMany().HasForeignKey(p => p.VersionTechnoId).OnDelete(DeleteBehavior.Restrict);
         modelBuilder.Entity<Projet>().HasOne<Client>().WithMany().HasForeignKey(p => p.ClientId).OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<ProjetPersonne>().HasOne<Projet>().WithMany().HasForeignKey(p => p.ProjetId).OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<ProjetPersonne>().HasOne<Personne>().WithMany().HasForeignKey(p => p.PersonneId).OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<ProjetPersonne>().HasOne<RoleProjet>().WithMany().HasForeignKey(p => p.RoleProjetCode).OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<ProjetTechno>().HasOne<Projet>().WithMany().HasForeignKey(p => p.ProjetId).OnDelete(DeleteBehavior.Restrict);
+        modelBuilder.Entity<ProjetTechno>().HasOne<VersionTechno>().WithMany().HasForeignKey(p => p.VersionTechnoId).OnDelete(DeleteBehavior.Restrict);
         modelBuilder.Entity<Techno>().HasOne<CategorieTechno>().WithMany().HasForeignKey(p => p.CategorieTechnoCode).OnDelete(DeleteBehavior.Restrict);
         modelBuilder.Entity<VersionTechno>().HasOne<Techno>().WithMany().HasForeignKey(p => p.TechnoId).OnDelete(DeleteBehavior.Restrict);
 

@@ -26,3 +26,67 @@ class:
       comment: Client du projet.
       label: Client
       required: true
+---
+class:
+  trigram: PTE
+  name: ProjetTechno
+  comment: Lien projet techno.
+
+  properties:
+    - name: Id
+      label: Id
+      primaryKey: true
+      domain: DO_ID
+      comment: Id lien.
+    - association: Projet
+      comment: Projet.
+      label: Projet
+      required: true
+    - association: VersionTechno
+      comment: Version techno.
+      label: Version techno
+      required: true
+    - name: DateDebut
+      comment: Date de début de l'usage de la techno.
+      label: Date début
+      domain: DO_DATE
+      required: true
+    - name: DateFin
+      comment: Date de fin de l'usage de la techno.
+      label: Date début
+      domain: DO_DATE
+      required: false
+---
+class:
+  trigram: PPS
+  name: ProjetPersonne
+  comment: Lien projet personne.
+
+  properties:
+    - name: Id
+      label: Id
+      primaryKey: true
+      domain: DO_ID
+      comment: Id lien.
+    - association: Projet
+      comment: Projet.
+      label: Projet
+      required: true
+    - association: Personne
+      comment: Personne.
+      label: Personne
+      required: true
+    - association: RoleProjet
+      comment: Rôle.
+      label: Rôle
+      required: true
+    - name: DateDebut
+      comment: Date de début de la participation de la personne au projet.
+      label: Date début
+      domain: DO_DATE
+      required: true
+    - name: DateFin
+      comment: Date de fin de la participation de la personne au projet.
+      label: Date début
+      domain: DO_DATE
+      required: false

@@ -10,15 +10,15 @@ using Madama.Common;
 namespace Klee.Madama.Infra.Db.Models;
 
 /// <summary>
-/// Personne travaillant dans l'entreprise.
+/// Lien projet techno.
 /// </summary>
-[Table("personne")]
-public partial class Personne
+[Table("projet_techno")]
+public partial class ProjetTechno
 {
     /// <summary>
     /// Constructeur.
     /// </summary>
-    public Personne()
+    public ProjetTechno()
     {
         OnCreated();
     }
@@ -27,7 +27,7 @@ public partial class Personne
     /// Constructeur par recopie.
     /// </summary>
     /// <param name="bean">Source.</param>
-    public Personne(Personne bean)
+    public ProjetTechno(ProjetTechno bean)
     {
         if (bean == null)
         {
@@ -35,57 +35,54 @@ public partial class Personne
         }
 
         Id = bean.Id;
-        Nom = bean.Nom;
-        Prenom = bean.Prenom;
-        Courriel = bean.Courriel;
-        PosteCode = bean.PosteCode;
+        ProjetId = bean.ProjetId;
+        VersionTechnoId = bean.VersionTechnoId;
+        DateDebut = bean.DateDebut;
+        DateFin = bean.DateFin;
 
         OnCreated(bean);
     }
 
     /// <summary>
-    /// Id client.
+    /// Id lien.
     /// </summary>
-    [Column("prs_id")]
+    [Column("pte_id")]
     [Domain(Domains.Id)]
     [Key]
     public int? Id { get; set; }
 
     /// <summary>
-    /// Nom de la personne.
+    /// Projet.
     /// </summary>
-    [Column("prs_nom")]
+    [Column("prj_id")]
     [Required]
-    [Domain(Domains.Libelle)]
-    [StringLength(100)]
-    public string Nom { get; set; }
+    [ReferencedType(typeof(Projet))]
+    [Domain(Domains.Id)]
+    public int? ProjetId { get; set; }
 
     /// <summary>
-    /// Prénom de la personne.
+    /// Version techno.
     /// </summary>
-    [Column("prs_prenom")]
+    [Column("vte_id")]
     [Required]
-    [Domain(Domains.Libelle)]
-    [StringLength(100)]
-    public string Prenom { get; set; }
+    [ReferencedType(typeof(VersionTechno))]
+    [Domain(Domains.Id)]
+    public int? VersionTechnoId { get; set; }
 
     /// <summary>
-    /// Courriel de la personne.
+    /// Date de début de l'usage de la techno.
     /// </summary>
-    [Column("prs_courriel")]
+    [Column("pte_date_debut", TypeName = "date")]
     [Required]
-    [Domain(Domains.Email)]
-    [StringLength(100)]
-    public string Courriel { get; set; }
+    [Domain(Domains.Date)]
+    public DateTime? DateDebut { get; set; }
 
     /// <summary>
-    /// Poste actuel.
+    /// Date de fin de l'usage de la techno.
     /// </summary>
-    [Column("pst_code")]
-    [ReferencedType(typeof(Poste))]
-    [Domain(Domains.Code10)]
-    [StringLength(10)]
-    public string PosteCode { get; set; }
+    [Column("pte_date_fin", TypeName = "date")]
+    [Domain(Domains.Date)]
+    public DateTime? DateFin { get; set; }
 
     /// <summary>
     /// Methode d'extensibilité possible pour les constructeurs.
@@ -96,5 +93,5 @@ public partial class Personne
     /// Methode d'extensibilité possible pour les constructeurs par recopie.
     /// </summary>
     /// <param name="bean">Source.</param>
-    partial void OnCreated(Personne bean);
+    partial void OnCreated(ProjetTechno bean);
 }
