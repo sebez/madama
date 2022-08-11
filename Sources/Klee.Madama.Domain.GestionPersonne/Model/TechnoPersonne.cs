@@ -8,7 +8,7 @@ public class TechnoPersonne
     /// <summary>
     /// Techno utilisée par la personne pendant la période.
     /// </summary>
-    public Techno Techno { get; set; }
+    public VersionTechno VersionTechno { get; set; }
 
     /// <summary>
     /// Période d'usage de la techno.
